@@ -20,3 +20,11 @@ FAZER:
 - section mostrando os trabalhos feitos
 
 - section mostrando a parte de contato.
+
+
+
+para se basear: 
+https://nashe.dev/#
+https://kenjimmy.me/
+https://olaolu.dev/
+https://robbowen.digital/

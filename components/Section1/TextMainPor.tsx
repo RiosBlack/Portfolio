@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import 'animate.css';
 
-export default function TextMain() {
+export default function TextMainIng() {
     const styleText =
         'text-white text-9xl font-extrabold font-sans bg-clip-text text-transparent bg-gradient-to-r from-[#4ECDC4] to-[#556270] hover:opacity-50 animate__animated animate__fadeInLeftBig';
 
@@ -15,9 +15,9 @@ export default function TextMain() {
 
     return (
         <>
-            <div className={styleText}>My</div>
-            <div className={styleText}>Name</div>
-            <div className={styleText}>Is</div>
+            <div className={styleText}>Meu</div>
+            <div className={styleText}>Nome</div>
+            <div className={styleText}>É</div>
             {showName ? (
                 <div className="text-white text-9xl font-extrabold font-sans bg-clip-text text-transparent bg-gradient-to-r from-[#c21500] to-[#ffc500] animate-pulse hover:opacity-50 animate__animated animate__headShake">
                     Douglas
