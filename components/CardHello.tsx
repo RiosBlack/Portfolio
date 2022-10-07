@@ -15,7 +15,7 @@ export default function CardHello() {
                     <span className={style.span}></span>
                     <span className={style.span}></span>
                     <span className={style.span}></span>
-                    <button className="font-FontGeral">
+                    <button className="font-FontGeral w-full">
                         Baixe aqui meu curriculum
                     </button>
                 </div>
