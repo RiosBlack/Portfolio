@@ -1,5 +1,5 @@
 import React from 'react';
-import ButtonPor from '../components/CardHello';
+import ButtonPor from '../components/Skils';
 
 export default function criacao() {
     return (
