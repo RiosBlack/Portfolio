@@ -1,18 +1,99 @@
-.Barra {
-    background-color: brown;
+.BarraJs {
+    background: linear-gradient(to left, yellow, #ffdf00);
     height: 100%;
-    animation-name: barra;
+    animation-name: barraJs;
+    animation-duration: 3s;
+    border-radius: 20px;
+    width: 75%;
+    box-shadow: 2px 0px 6px yellow;
+}
+
+@keyframes barraJs {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 75%;
+    }
+}
+
+.BarraRc {
+    background: linear-gradient(to left, blue, #004cf0);
+    height: 100%;
+    animation-name: barraRc;
+    animation-duration: 3s;
+    border-radius: 20px;
+    width: 50%;
+    box-shadow: 2px 0px 6px blue;
+}
+
+@keyframes barraRc {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 50%;
+    }
+}
+
+.BarraJa {
+    background: linear-gradient(to left, #73A1FB, #bacffc);
+    height: 100%;
+    animation-name: barraJa;
     animation-duration: 3s;
     border-radius: 20px;
     width: 25%;
+    box-shadow: 2px 0px 6px #73A1FB;
 }
 
-@keyframes barra {
+@keyframes barraJa {
     from {
         width: 0%;
     }
 
     to {
         width: 25%;
+    }
+}
+
+.BarraBa {
+    background: linear-gradient(to left, #33474F, #00E3CD);
+    height: 100%;
+    animation-name: barraBa;
+    animation-duration: 3s;
+    border-radius: 20px;
+    width: 50%;
+    box-shadow: 2px 0px 6px #00E3CD;
+}
+
+@keyframes barraBa {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 50%;
+    }
+}
+
+.BarraTa {
+    background: linear-gradient(to left, #38BDF7, #cbe9f6);
+    height: 100%;
+    animation-name: barraTa;
+    animation-duration: 3s;
+    border-radius: 20px;
+    width: 75%;
+    box-shadow: 2px 0px 6px #38BDF7;
+}
+
+@keyframes barraTa {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 75%;
     }
 }
