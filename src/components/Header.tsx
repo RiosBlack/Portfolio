@@ -1,28 +1,19 @@
 import Logo from '../../public/Logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
 
-export default function Header() {
+export default function Header(props: any) {
     const styleA =
         'border-2 border-transparent text-gray-400 hover:transition-colors duration-500 hover:border-b-white hover:text-white text-base lg:text-sm hover:bg-white hover:bg-opacity-25 rounded-md';
 
-    const [buttonPot, setButonTex] = useState<boolean>(true);
-
     function ChangeTextPor() {
-        setButonTex(true);
-        StateButtonPot();
-        console.log(buttonPot);
+        props.setButonTex(true);
+        console.log(props.buttonPot);
     }
 
     function ChangeTextIng() {
-        setButonTex(false);
-        StateButtonPot();
-        console.log(buttonPot);
-    }
-
-    function StateButtonPot() {
-        buttonPot;
+        props.setButonTex(false);
+        console.log(props.buttonPot);
     }
 
     return (
@@ -65,7 +56,7 @@ export default function Header() {
                         </li>
                     </ul>
                     <div className="flex justify-center items-center">
-                        <div
+                        {/*<div
                             className="pr-3 hover:brightness-50"
                             onClick={ChangeTextPor}
                         >
@@ -86,7 +77,7 @@ export default function Header() {
                                 width={30}
                                 height={30}
                             />
-                        </div>
+    </div>*/}
                     </div>
                 </nav>
             </header>

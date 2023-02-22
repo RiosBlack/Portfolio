@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { AiFillGithub } from 'react-icons/ai';
@@ -20,15 +21,37 @@ export default function CardProject(props: Props) {
     return (
         <div className="border border-slate-700 bg-gray-900 w-64 grid justify-items-center rounded-lg overflow-hidden transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:bg-slate-700 duration-300">
             <div className=" w-52 h-32 z-10 absolute rounded-xl gap-0 grid grid-cols-2 overflow-hidden justify-items-center">
-                <img className={imgProps} src={props.tecProjeto1} />
-                <img className={imgProps} src={props.tecProjeto2} />
-                <img className={imgProps} src={props.tecProjeto3} />
-                <img className={imgProps} src={props.tecProjeto4} />
+                <Image
+                    width={52}
+                    height={32}
+                    className={imgProps}
+                    src={props.tecProjeto1}
+                />
+                <Image
+                    width={52}
+                    height={32}
+                    className={imgProps}
+                    src={props.tecProjeto2}
+                />
+                <Image
+                    width={52}
+                    height={32}
+                    className={imgProps}
+                    src={props.tecProjeto3}
+                />
+                <Image
+                    width={52}
+                    height={32}
+                    className={imgProps}
+                    src={props.tecProjeto4}
+                />
                 <h1 className="text-xs text-slate-400 w-full col-span-2 text-center">
                     Algumas tecnologias
                 </h1>
             </div>
-            <img
+            <Image
+                width={300}
+                height={500}
                 className="p-2 w-60 h-36 z-20 object-cover rounded-xl hover:rotate-90 hover:origin-top-right hover:transition-all hover:delay-150 hover:duration-500"
                 src={props.imgProjeto}
                 alt="Imagem do projeto"

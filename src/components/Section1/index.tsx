@@ -6,6 +6,7 @@ import 'animate.css';
 export default function index() {
     // eslint-disable-next-line react-hooks/rules-of-hooks
     const [buttonView, setButtonView] = useState<boolean>(false);
+        const [buttonPot, setButonTex] = useState<boolean>(true);
 
     function viewButton() {
         setTimeout(() => {
