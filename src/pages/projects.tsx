@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Header from 'components/Header';
-import { FcGraduationCap, } from 'react-icons/fc';
+import { FcServices } from 'react-icons/fc';
 import { useEffect, useState } from 'react';
 import CardProject from 'components/CardProject';
 
@@ -23,26 +23,28 @@ export default function skill() {
     }, []);
 
     return (
-        <div className="bg-gradient-to-t from-gray-900 via-black to-black h-full xl:h-screen grid">
+        <div className="bg-gradient-to-t from-gray-900 via-black to-black h-full lg:h-screen xl:h-screen grid">
             <Head>
                 <title>Portifolio Douglas Rios</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header />
             <div className="grid justify-items-center animate__animated animate__fadeInDown">
-                <main className="container grid grid-cols-1 md:grid-cols-2 content-center justify-items-center px-2 lg:px-10 xl:px-30 2xl:px-40 pb-5">
+                <main className="container mx-auto px-4 my-5 grid">
                     <div className="grid justify-items-center content-center border-2 border-slate-700 rounded-[8%] min-w-full p-2">
                         <h1 className="font-bold text-slate-400 text-xl flex items-center justify-center pb-2">
+                            <FcServices className="mr-2" />
                             Projetos
-                            <FcGraduationCap className="ml-2" />
+                            <FcServices className="ml-2" />
                         </h1>
-                        <div className="inline-grid grid-cols-3 xl:grid-cols-4 gap-5">
+                        <div className="inline-grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-5">
                             {data &&
                                 data.map(
                                     (item: {
                                         nomeProjeto: String;
                                         imgProjeto: String;
                                         hrefProjeto: String;
+                                        hrefGitHub: String;
                                         tecProjeto1: String;
                                         tecProjeto2: String;
                                         tecProjeto3: String;
@@ -55,10 +57,11 @@ export default function skill() {
                                                 nomeProjeto={item.nomeProjeto}
                                                 imgProjeto={item.imgProjeto}
                                                 hrefProjeto={item.hrefProjeto}
+                                                hrefGitHub={item.hrefGitHub}
                                                 tecProjeto1={item.tecProjeto1}
                                                 tecProjeto2={item.tecProjeto2}
                                                 tecProjeto3={item.tecProjeto3}
-                                                tecProjeto4={item.tecProjeto3}
+                                                tecProjeto4={item.tecProjeto4}
                                                 textProjeto={item.textProjeto}
                                             />
                                         </div>

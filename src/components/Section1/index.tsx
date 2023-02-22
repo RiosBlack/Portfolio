@@ -4,6 +4,7 @@ import Button from './Button';
 import 'animate.css';
 
 export default function index() {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [buttonView, setButtonView] = useState<boolean>(false);
 
     function viewButton() {
