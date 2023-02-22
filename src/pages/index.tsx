@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Header from 'components/Header';
 import Section1 from 'src/components/Section1';
 
-export default function Home() {
+export default function About() {
     return (
         <div className="bg-gradient-to-t from-gray-900 via-black to-black w-screen h-screen">
             <Head>
@@ -10,7 +10,7 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <Header />
-            <main>
+            <main className="sm:h-[80%] flex justify-center items-center">
                 <Section1 />
             </main>
         </div>
