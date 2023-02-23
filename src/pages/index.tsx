@@ -1,6 +1,8 @@
 import Head from 'next/head';
 import Header from 'components/Header';
-import Section1 from 'src/components/Section1';
+import Section1 from 'components/Section1';
+
+
 
 export default function About() {
     return (

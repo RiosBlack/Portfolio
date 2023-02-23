@@ -12,7 +12,7 @@ export default function CardContact() {
     const [sendEmailVerifield, setSendEmailVerifield] =
         useState<boolean>(false);
 
-    const sendEmail = e => {
+    const sendEmail = (e) => {
         e.preventDefault();
 
         emailjs

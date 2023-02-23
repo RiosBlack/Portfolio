@@ -1,20 +1,14 @@
+import { useState } from 'react';
 import Logo from '../../public/Logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Header(props: any) {
+export default function Header() {
     const styleA =
         'border-2 border-transparent text-gray-400 hover:transition-colors duration-500 hover:border-b-white hover:text-white text-base lg:text-sm hover:bg-white hover:bg-opacity-25 rounded-md';
 
-    function ChangeTextPor() {
-        props.setButonTex(true);
-        console.log(props.buttonPot);
-    }
-
-    function ChangeTextIng() {
-        props.setButonTex(false);
-        console.log(props.buttonPot);
-    }
+    //State para trocar de idioma
+    const [stateButton, setStateButton] = useState<boolean>(true);
 
     return (
         <div>
@@ -56,9 +50,9 @@ export default function Header(props: any) {
                         </li>
                     </ul>
                     <div className="flex justify-center items-center">
-                        {/*<div
+                        <div
                             className="pr-3 hover:brightness-50"
-                            onClick={ChangeTextPor}
+                            onClick={() => setStateButton(true)}
                         >
                             <Image
                                 src={'/BandeiraBrasil.png'}
@@ -69,7 +63,7 @@ export default function Header(props: any) {
                         </div>
                         <div
                             className="pr-3 hover:brightness-50"
-                            onClick={ChangeTextIng}
+                            onClick={() => setStateButton(false)}
                         >
                             <Image
                                 src={'/BandeiraEua.png'}
@@ -77,7 +71,7 @@ export default function Header(props: any) {
                                 width={30}
                                 height={30}
                             />
-    </div>*/}
+                        </div>
                     </div>
                 </nav>
             </header>
