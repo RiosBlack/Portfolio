@@ -25,22 +25,30 @@ export default function CardProject(props: Props) {
                     src={props.tecProjeto1}
                     width={52}
                     height={32}
-                    layout="fill" alt={''}                />
+                    className={imgProps}
+                    alt={''}
+                />
                 <Image
                     width={52}
                     height={32}
                     className={imgProps}
-                    src={props.tecProjeto2} alt={''}                />
+                    src={props.tecProjeto2}
+                    alt={''}
+                />
                 <Image
                     width={52}
                     height={32}
                     className={imgProps}
-                    src={props.tecProjeto3} alt={''}                />
+                    src={props.tecProjeto3}
+                    alt={''}
+                />
                 <Image
                     width={52}
                     height={32}
                     className={imgProps}
-                    src={props.tecProjeto4} alt={''}                />
+                    src={props.tecProjeto4}
+                    alt={''}
+                />
                 <h1 className="text-xs text-slate-400 w-full col-span-2 text-center">
                     Algumas tecnologias
                 </h1>

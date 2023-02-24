@@ -1,11 +1,24 @@
 import Head from 'next/head';
 import Header from 'components/Header';
 import { FcServices } from 'react-icons/fc';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import CardProject from 'components/CardProject';
 
-export default function skill() {
+export default function Projects() {
     const [data, setData] = useState<any>(null);
+
+    //State para trocar de idioma
+    const [stateButton, setStateButton] = useState<boolean>(true);
+
+    const setPort = () => {
+        setStateButton(true);
+        console.log(stateButton);
+    };
+
+    const setIngl = () => {
+        setStateButton(false);
+        console.log(stateButton);
+    };
 
     const fetchAllProject = async () => {
         try {
@@ -18,18 +31,17 @@ export default function skill() {
         }
     };
 
+    useEffect(() => {
+        fetchAllProject();
+    }, [data]);
+
     return (
-        <div
-            onLoad={() => {
-                fetchAllProject();
-            }}
-            className="bg-gradient-to-t from-gray-900 via-black to-black h-full lg:h-screen xl:h-screen grid"
-        >
+        <div className="bg-gradient-to-t from-gray-900 via-black to-black h-full lg:h-screen xl:h-screen grid">
             <Head>
                 <title>Portifolio Douglas Rios</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Header />
+            <Header clickPort={setPort} clickIngl={setIngl} />
             <div className="grid justify-items-center animate__animated animate__fadeInDown">
                 <main className="container mx-auto px-4 my-5 grid">
                     <div className="grid justify-items-center content-center border-2 border-slate-700 rounded-[8%] min-w-full p-2">
@@ -52,8 +64,10 @@ export default function skill() {
                                         tecProjeto4: string;
                                         textProjeto: string;
                                     }) => (
-                                        // eslint-disable-next-line react/jsx-key
-                                        <div className="mb-7">
+                                        <div
+                                            key={item.nomeProjeto}
+                                            className="mb-7"
+                                        >
                                             <CardProject
                                                 nomeProjeto={item.nomeProjeto}
                                                 imgProjeto={item.imgProjeto}

@@ -4,13 +4,26 @@ import Image from 'next/image';
 import CardRedes from 'components/CardRedes';
 import CardSkill from 'components/CardSkill';
 import { FcGraduationCap, FcBiotech } from 'react-icons/fc';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
-export default function skill() {
+export default function Skill() {
     const [dataHard, setDataHard] = useState<any>(null);
     const [dataSoft, setDataSoft] = useState<any>(null);
 
-    const fetchAllDataHard = async () => { 
+    //State para trocar de idioma
+    const [stateButton, setStateButton] = useState<boolean>(true);
+
+    const setPort = () => {
+        setStateButton(true);
+        console.log(stateButton);
+    };
+
+    const setIngl = () => {
+        setStateButton(false);
+        console.log(stateButton);
+    };
+
+    const fetchAllDataHard = async () => {
         try {
             const response = await fetch('/api/dataHardSkill');
             const data = await response.json();
@@ -31,16 +44,18 @@ export default function skill() {
         }
     };
 
+    useEffect(() => {
+        fetchAllDataHard(), fetchAllDataSoft();
+    }, [dataHard, dataSoft]);
 
     return (
-        <div onLoad={() => {(fetchAllDataHard(),
-        fetchAllDataSoft())}} className="bg-gradient-to-t from-gray-900 via-black to-black h-full xl:h-screen grid">
+        <div className="bg-gradient-to-t from-gray-900 via-black to-black h-full grid">
             <Head>
                 <title>Portifolio Douglas Rios</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Header />
-            <div className="grid justify-items-center animate__animated animate__fadeInDown">
+            <Header clickPort={setPort} clickIngl={setIngl} />
+            <div className="grid justify-items-center animate__animated animate__fadeInDown pt-5 lg:pt-0">
                 <main className="container grid grid-cols-1 md:grid-cols-2 content-center justify-items-center px-2 lg:px-10 xl:px-30 2xl:px-40 pb-5">
                     <div className="grid justify-items-center mb-5">
                         <Image

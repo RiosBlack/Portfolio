@@ -19,9 +19,8 @@ export default function CardRedes() {
                     >
                         <Image
                             src="/linkedin.svg"
-                            width="30"
-                            height="30"
-                            layout="fill"
+                            width="50"
+                            height="50"
                             alt=""
                         />
                     </a>
@@ -32,7 +31,6 @@ export default function CardRedes() {
                             src="/github.svg"
                             width="50"
                             height="50"
-                            layout="fill"
                             alt=""
                         />
                     </a>
@@ -46,7 +44,6 @@ export default function CardRedes() {
                             src="/instagram.svg"
                             width="50"
                             height="50"
-                            layout="fill"
                             alt=""
                         />
                     </a>

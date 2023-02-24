@@ -1,14 +1,15 @@
-import { useState } from 'react';
 import Logo from '../../public/Logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
 
-export default function Header() {
+type Props = {
+    clickPort: () => void;
+    clickIngl: () => void;
+};
+
+export default function Header({ clickPort, clickIngl }: Props) {
     const styleA =
         'border-2 border-transparent text-gray-400 hover:transition-colors duration-500 hover:border-b-white hover:text-white text-base lg:text-sm hover:bg-white hover:bg-opacity-25 rounded-md';
-
-    //State para trocar de idioma
-    const [stateButton, setStateButton] = useState<boolean>(true);
 
     return (
         <div>
@@ -52,7 +53,7 @@ export default function Header() {
                     <div className="flex justify-center items-center">
                         <div
                             className="pr-3 hover:brightness-50"
-                            onClick={() => setStateButton(true)}
+                            onClick={clickPort}
                         >
                             <Image
                                 src={'/BandeiraBrasil.png'}
@@ -63,7 +64,7 @@ export default function Header() {
                         </div>
                         <div
                             className="pr-3 hover:brightness-50"
-                            onClick={() => setStateButton(false)}
+                            onClick={clickIngl}
                         >
                             <Image
                                 src={'/BandeiraEua.png'}
