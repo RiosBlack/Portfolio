@@ -7,7 +7,7 @@ type Data = {
     nivel: string;
 };
 //dedicado - responsável - pró ativo - persistente - comunicativo - capacidade de liderança - determinado - criativo
-const softSkills = [
+const softSkills: any = [
     {
         srcImg: '/Dedicado.png',
         altImg: 'Logo Dedicado',

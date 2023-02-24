@@ -1,18 +1,18 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 type Data = {
-    nimgProjeto: String;
-    nomeProjeto: String;
-    textProjeto: String;
-    hrefProjeto: String;
-    hrefGitHub: String;
-    tecProjeto1: String;
-    tecProjeto2: String;
-    tecProjeto3: String;
-    tecProjeto4: String;
+    nomeProjeto: string;
+    imgProjeto: string;
+    textProjeto: string;
+    hrefProjeto: string;
+    hrefGitHub: string;
+    tecProjeto1: string;
+    tecProjeto2: string;
+    tecProjeto3: string;
+    tecProjeto4: string;
 };
 
-const projetos = [
+const projetos: any = [
     {
         nomeProjeto: 'Api SpringBoot',
         imgProjeto: '/Api.png',

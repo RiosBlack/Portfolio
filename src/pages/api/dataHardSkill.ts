@@ -7,7 +7,7 @@ type Data = {
     nivel: string;
 };
 
-const hardSkills = [
+const hardSkills: any = [
     {
         srcImg: '/Javascript.svg',
         altImg: 'Logo Javascript',
