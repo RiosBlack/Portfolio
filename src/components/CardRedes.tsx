@@ -21,7 +21,7 @@ export default function CardRedes() {
                             src="/linkedin.svg"
                             width="30"
                             height="30"
-                            layout="responsive"
+                            layout="fill"
                             alt=""
                         />
                     </a>
@@ -32,7 +32,7 @@ export default function CardRedes() {
                             src="/github.svg"
                             width="50"
                             height="50"
-                            layout="responsive"
+                            layout="fill"
                             alt=""
                         />
                     </a>
@@ -46,7 +46,7 @@ export default function CardRedes() {
                             src="/instagram.svg"
                             width="50"
                             height="50"
-                            layout="responsive"
+                            layout="fill"
                             alt=""
                         />
                     </a>

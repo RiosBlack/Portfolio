@@ -1,19 +1,18 @@
-/* eslint-disable jsx-a11y/alt-text */
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 import { AiFillGithub } from 'react-icons/ai';
 
 type Props = {
-    imgProjeto: String;
-    nomeProjeto: String;
-    textProjeto: String;
-    hrefProjeto: String;
-    hrefGitHub: String;
-    tecProjeto1: String;
-    tecProjeto2: String;
-    tecProjeto3: String;
-    tecProjeto4: String;
+    imgProjeto: string;
+    nomeProjeto: string;
+    textProjeto: string;
+    hrefProjeto: string;
+    hrefGitHub: string;
+    tecProjeto1: string;
+    tecProjeto2: string;
+    tecProjeto3: string;
+    tecProjeto4: string;
 };
 
 export default function CardProject(props: Props) {
@@ -23,29 +22,25 @@ export default function CardProject(props: Props) {
         <div className="border border-slate-700 bg-gray-900 w-64 grid justify-items-center rounded-lg overflow-hidden transition ease-in-out delay-150  hover:-translate-y-1 hover:scale-110 hover:bg-slate-700 duration-300">
             <div className=" w-52 h-32 z-10 absolute rounded-xl gap-0 grid grid-cols-2 overflow-hidden justify-items-center">
                 <Image
-                    width={52}
-                    height={32}
-                    className={imgProps}
                     src={props.tecProjeto1}
-                />
+                    width={52}
+                    height={32}
+                    layout="fill" alt={''}                />
                 <Image
                     width={52}
                     height={32}
                     className={imgProps}
-                    src={props.tecProjeto2}
-                />
+                    src={props.tecProjeto2} alt={''}                />
                 <Image
                     width={52}
                     height={32}
                     className={imgProps}
-                    src={props.tecProjeto3}
-                />
+                    src={props.tecProjeto3} alt={''}                />
                 <Image
                     width={52}
                     height={32}
                     className={imgProps}
-                    src={props.tecProjeto4}
-                />
+                    src={props.tecProjeto4} alt={''}                />
                 <h1 className="text-xs text-slate-400 w-full col-span-2 text-center">
                     Algumas tecnologias
                 </h1>

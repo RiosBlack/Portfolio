@@ -1,11 +1,11 @@
 import Head from 'next/head';
 import Header from 'components/Header';
 import { FcServices } from 'react-icons/fc';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import CardProject from 'components/CardProject';
 
 export default function skill() {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState<any>(null);
 
     const fetchAllProject = async () => {
         try {
@@ -18,12 +18,13 @@ export default function skill() {
         }
     };
 
-    useEffect(() => {
-        fetchAllProject();
-    }, []);
-
     return (
-        <div className="bg-gradient-to-t from-gray-900 via-black to-black h-full lg:h-screen xl:h-screen grid">
+        <div
+            onLoad={() => {
+                fetchAllProject();
+            }}
+            className="bg-gradient-to-t from-gray-900 via-black to-black h-full lg:h-screen xl:h-screen grid"
+        >
             <Head>
                 <title>Portifolio Douglas Rios</title>
                 <link rel="icon" href="/favicon.ico" />
@@ -41,15 +42,15 @@ export default function skill() {
                             {data &&
                                 data.map(
                                     (item: {
-                                        nomeProjeto: String;
-                                        imgProjeto: String;
-                                        hrefProjeto: String;
-                                        hrefGitHub: String;
-                                        tecProjeto1: String;
-                                        tecProjeto2: String;
-                                        tecProjeto3: String;
-                                        tecProjeto4: String;
-                                        textProjeto: String;
+                                        nomeProjeto: string;
+                                        imgProjeto: string;
+                                        hrefProjeto: string;
+                                        hrefGitHub: string;
+                                        tecProjeto1: string;
+                                        tecProjeto2: string;
+                                        tecProjeto3: string;
+                                        tecProjeto4: string;
+                                        textProjeto: string;
                                     }) => (
                                         // eslint-disable-next-line react/jsx-key
                                         <div className="mb-7">

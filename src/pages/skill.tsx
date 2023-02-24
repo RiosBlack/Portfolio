@@ -4,13 +4,13 @@ import Image from 'next/image';
 import CardRedes from 'components/CardRedes';
 import CardSkill from 'components/CardSkill';
 import { FcGraduationCap, FcBiotech } from 'react-icons/fc';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export default function skill() {
-    const [dataHard, setDataHard] = useState(null);
-    const [dataSoft, setDataSoft] = useState(null);
+    const [dataHard, setDataHard] = useState<any>(null);
+    const [dataSoft, setDataSoft] = useState<any>(null);
 
-    const fetchAllDataHard = async () => {
+    const fetchAllDataHard = async () => { 
         try {
             const response = await fetch('/api/dataHardSkill');
             const data = await response.json();
@@ -31,13 +31,10 @@ export default function skill() {
         }
     };
 
-    useEffect(() => {
-        fetchAllDataHard();
-        fetchAllDataSoft();
-    }, []);
 
     return (
-        <div className="bg-gradient-to-t from-gray-900 via-black to-black h-full xl:h-screen grid">
+        <div onLoad={() => {(fetchAllDataHard(),
+        fetchAllDataSoft())}} className="bg-gradient-to-t from-gray-900 via-black to-black h-full xl:h-screen grid">
             <Head>
                 <title>Portifolio Douglas Rios</title>
                 <link rel="icon" href="/favicon.ico" />
