@@ -4,6 +4,8 @@ import Header from 'components/Header';
 import CardTextPort from 'components/CardTextPort';
 import Button from 'components/Button';
 import 'animate.css';
+import CardTextIng from 'components/CardTextIng';
+import ButtonIng from 'components/ButtonIng';
 
 export default function Index() {
     //State para aparecer o botão de baixar.
@@ -20,13 +22,11 @@ export default function Index() {
 
     const setPort = () => {
         setStateButton(true);
-        console.log(stateButton);
     };
 
     const setIngl = () => {
         setButtonView(false);
         setStateButton(false);
-        console.log(stateButton);
     };
 
     return (
@@ -49,13 +49,28 @@ export default function Index() {
                     </div>
                     <div className="container flex items-center justify-start w-[80%] rounded-b-md border-2 border-slate-700 pl-2">
                         <div className="py-5">
-                            {stateButton === true ? <CardTextPort /> : ''}
+                            {stateButton === true ? (
+                                <CardTextPort />
+                            ) : (
+                                <CardTextIng />
+                            )}
 
                             {buttonView === true ? <Button /> : ''}
+
+                            {buttonView === false && stateButton === false ? (
+                                <ButtonIng />
+                            ) : (
+                                ''
+                            )}
                         </div>
                     </div>
                 </div>
             </main>
+            <footer>
+                <div className="flex justify-center text-gray-800">
+                    <p>Copyright - 2023 - RiosCode</p>
+                </div>
+            </footer>
         </div>
     );
 }
