@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import Head from 'next/head';
 import Header from 'components/Header';
 import CardTextPort from 'components/CardTextPort';
@@ -6,6 +6,7 @@ import Button from 'components/Button';
 import 'animate.css';
 import CardTextIng from 'components/CardTextIng';
 import ButtonIng from 'components/ButtonIng';
+import { HeaderStateContext } from 'src/contexts/HeaderStateContext';
 
 export default function Index() {
     //State para aparecer o botão de baixar.
@@ -17,17 +18,12 @@ export default function Index() {
         }, 9000);
     }, [buttonView]);
 
-    //State para trocar de idioma
-    const [stateButton, setStateButton] = useState<boolean>(true);
+    useEffect(() => {
+        console.log(stateButton);
+    }, []);
 
-    const setPort = () => {
-        setStateButton(true);
-    };
 
-    const setIngl = () => {
-        setButtonView(false);
-        setStateButton(false);
-    };
+    const { stateButton }: any = useContext(HeaderStateContext);
 
     return (
         <div className="bg-gradient-to-t from-gray-900 via-black to-black w-screen h-screen">
@@ -35,7 +31,7 @@ export default function Index() {
                 <title>Portifolio Douglas Rios</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Header clickPort={setPort} clickIngl={setIngl} />
+            <Header />
             <main className="sm:h-[80%] flex justify-center items-center">
                 <div className="w-screen grid justify-items-center animate__animated animate__fadeInDown pt-12 sm:pt-0">
                     <div className="w-[80%] rounded-t-md bg-slate-700 flex justify-between p-2">
@@ -54,9 +50,7 @@ export default function Index() {
                             ) : (
                                 <CardTextIng />
                             )}
-
                             {buttonView === true ? <Button /> : ''}
-
                             {buttonView === false && stateButton === false ? (
                                 <ButtonIng />
                             ) : (

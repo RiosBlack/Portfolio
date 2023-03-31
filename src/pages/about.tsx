@@ -3,29 +3,21 @@ import Header from 'components/Header';
 import Image from 'next/image';
 import CardRedes from 'components/CardRedes';
 import CardRedesIng from 'components/CardRedesIng';
-import { useState } from 'react';
+import { useContext } from 'react';
+import { HeaderStateContext } from 'src/contexts/HeaderStateContext';
+
 
 export default function About() {
-    //State para trocar de idioma
-    const [stateButton, setStateButton] = useState<boolean>(true);
 
-    const setPort = () => {
-        setStateButton(true);
-        console.log(stateButton);
-    };
-
-    const setIngl = () => {
-        setStateButton(false);
-        console.log(stateButton);
-    };
-
+        const { stateButton }: any = useContext(HeaderStateContext);
+        
     return (
         <div className="bg-gradient-to-t from-gray-900 via-black to-black h-full lg:h-screen grid">
             <Head>
                 <title>Portifolio Douglas Rios</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Header clickPort={setPort} clickIngl={setIngl} />
+            <Header /* clickPort={setPort} clickIngl={setIngl} */ />
             <div className="grid justify-items-center animate__animated animate__fadeInDown pt-5 lg:pt-0">
                 <main className="container grid grid-cols-1 md:grid-cols-2 content-center justify-items-center px-6 lg:px-40 sm:pb-7">
                     <div className="grid justify-items-center ">

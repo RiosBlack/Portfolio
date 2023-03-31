@@ -1,15 +1,15 @@
 import Logo from '../../public/Logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import { HeaderStateContext } from 'src/contexts/HeaderStateContext';
+import { useContext } from 'react';
 
-type Props = {
-    clickPort: () => void;
-    clickIngl: () => void;
-};
 
-export default function Header({ clickPort, clickIngl }: Props) {
+export default function Header() {
     const styleA =
         'border-2 border-transparent text-gray-400 hover:transition-colors duration-500 hover:border-b-white hover:text-white text-base lg:text-sm hover:bg-white hover:bg-opacity-25 rounded-md';
+
+    const { setStateButton }:any = useContext(HeaderStateContext);
 
     return (
         <div>
@@ -53,7 +53,9 @@ export default function Header({ clickPort, clickIngl }: Props) {
                     <div className="flex justify-center items-center">
                         <div
                             className="pr-3 hover:brightness-50"
-                            onClick={clickPort}
+                            onClick={() => {
+                                setStateButton(true);
+                            }}
                         >
                             <Image
                                 src={'/BandeiraBrasil.png'}
@@ -64,7 +66,9 @@ export default function Header({ clickPort, clickIngl }: Props) {
                         </div>
                         <div
                             className="pr-3 hover:brightness-50"
-                            onClick={clickIngl}
+                            onClick={() => {
+                                setStateButton(false);
+                            }}
                         >
                             <Image
                                 src={'/BandeiraEua.png'}
